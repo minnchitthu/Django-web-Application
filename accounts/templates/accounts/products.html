@@ -1,0 +1,28 @@
+{% extends "accounts/master.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Products</h5>
+        </div>
+        <div class="card card-body">
+            <table class="table">
+                <tr>
+                    <th>Product</th>
+                    <th>Date Time</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+                {% for product in products %}
+                <tr>
+                    <th>{{product.name}}</th>
+                    <th>{{product.created_at}}</th>
+                    <th>{{product.category}}</th>
+                    <th>{{product.price}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

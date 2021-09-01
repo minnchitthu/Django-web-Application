@@ -1,0 +1,16 @@
+{% extends "accounts/master.html" %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {% if form %}
+        {{form}}  
+    {% endif %}
+    {% if formset %}
+        {{formset.management_form}}
+        {% for form in formset %}
+            {{form}} <hr>
+        {% endfor %}
+        <input class="btn btn-secondary btn-sm" type="submit" value="Add Order">
+    {% endif %}
+</form>
+{% endblock content %}
